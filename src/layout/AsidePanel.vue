@@ -68,6 +68,9 @@
     opacity: 0.5;
     cursor: pointer;
   }
-
+  #aside .flex-container-v {
+    display: flex;
+    flex-direction: column;
+  }
 
 </style>
