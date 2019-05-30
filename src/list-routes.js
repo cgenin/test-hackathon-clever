@@ -5,6 +5,7 @@ import VoicePage from '@/components/pages/VoicePage';
 import CameraPage from '@/components/pages/CameraPage';
 import MapsPage from '@/components/pages/MapsPage';
 import FormPage from '@/components/pages/FormPage';
+import WebRtcPage from '@/components/pages/WebRtcPage';
 
 
 export default [
@@ -51,5 +52,10 @@ export default [
         label: 'Forms demo',
         name: 'FormsPage',
         component: FormPage
+    },{
+        path: '/webrtc',
+        label: 'webrtc demo',
+        name: 'WebRtcPage',
+        component: WebRtcPage
     },
 ];
