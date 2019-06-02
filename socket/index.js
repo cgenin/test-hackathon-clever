@@ -1,19 +1,10 @@
+const addWebRtc = require('./webrtc');
+const addChat = require('./chat');
+
 function initialize(http) {
-    const io = require('socket.io')(http, {
-        path: '/webrtc'
-    });
-    io.on('connection', (socket) => {
-        console.log('user connected');
-
-        socket.on('offer', (data) => {
-            socket.broadcast.emit('offer', data);
-        });
-
-        socket.on('initiate', () => {
-            io.emit('initiate');
-        });
-        io.emit('pong');
-    })
+    const io = require('socket.io')(http);
+    addWebRtc(io);
+    addChat(io);
 }
 
 module.exports = initialize;

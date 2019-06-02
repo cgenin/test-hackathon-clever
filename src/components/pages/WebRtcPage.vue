@@ -1,7 +1,7 @@
 <template>
     <page-container id="webrtc">
         <h1>Web rtc</h1>
-        <div>
+        <div class="buttons">
             <button-raised type="info" v-if="!start" :click="doStart">Lancer</button-raised>
             <button-raised type="warning" v-if="start" :click="doStop">Stop</button-raised>
         </div>
@@ -47,11 +47,10 @@
             }
         },
         mounted() {
-            this.socket = io.connect({ path: '/webrtc' });
-            this.socket.on('pong', () => console.log('ping'))
+            this.socket = io('/webrtc').connect();
+            this.socket.on('pong', () => console.log('ping'));
             this.socket.on('initiate', () => {
                 this.startStream();
-                this.start = true;
             });
 
         },
@@ -125,6 +124,12 @@
         grid-template-columns: 50% 50%;
         grid-template-rows: 50vh;
     }
+
+    #webrtc .buttons {
+        display: flex;
+        margin: 1em;
+    }
+
 
     #webrtc .videos > .col1 {
         grid-column: 1;

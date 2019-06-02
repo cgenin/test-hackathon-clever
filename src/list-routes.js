@@ -6,6 +6,7 @@ import CameraPage from '@/components/pages/CameraPage';
 import MapsPage from '@/components/pages/MapsPage';
 import FormPage from '@/components/pages/FormPage';
 import WebRtcPage from '@/components/pages/WebRtcPage';
+import ChatPage from '@/components/pages/ChatPage';
 
 
 export default [
@@ -52,7 +53,14 @@ export default [
         label: 'Forms demo',
         name: 'FormsPage',
         component: FormPage
-    },{
+    },
+    {
+        path: '/chat',
+        label: 'chat demo',
+        name: 'ChatPage',
+        component: ChatPage
+    },
+    {
         path: '/webrtc',
         label: 'webrtc demo',
         name: 'WebRtcPage',
